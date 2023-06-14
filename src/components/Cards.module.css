@@ -1,0 +1,8 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 20px; /* Aumentamos el espacio entre las tarjetas a 20px */
+	margin-bottom: 20px; /* Agregamos un espacio inferior entre el contenedor y las tarjetas */
+}
+/* Asegúrate de que las cards tengan un ancho fijo para que se puedan alinear correctamente en columnas */
