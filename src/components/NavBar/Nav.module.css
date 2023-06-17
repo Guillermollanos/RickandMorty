@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	height: 50px; /* Ajusta la altura del contenedor según tus necesidades */
+}
+
+input[type='search'] {
+	padding: 10px;
+	border: 1px solid #1f618d; /* Color del borde del input */
+	border-radius: 5px;
+}
+
+.button {
+	padding: 10px 20px;
+	background-color: #e74c3c; /* Color de fondo del botón */
+	color: #ffffff; /* Color de letra del botón */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}

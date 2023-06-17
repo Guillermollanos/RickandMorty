@@ -1,0 +1,25 @@
+.aboutContainer {
+	text-align: center;
+	height: 87vh;
+	margin: 0 auto;
+	padding: 20px;
+	background-image: url('../../assets/Rick-and-Morty.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100vh; /* Abarcar el 100% de la pantalla */
+	position: relative; /* Establecer la posición del contenedor como relativa */
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 1rem; /* Modificar el tamaño de la fuente de los párrafos */
+	margin-bottom: 10px;
+}
+
+p:last-child {
+	margin-top: 20px; /* Agregar margen superior al último párrafo */
+}
