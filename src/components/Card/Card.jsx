@@ -21,7 +21,6 @@ export default function Card({
 			<Link to={`/detail/${id}`}>
 				<h2 className={style.nameCard}>{name}</h2>
 			</Link>
-
 			<h2 className={style.nameStatus}> {status}</h2>
 			<h2 className={style.name}> {species}</h2>
 			<h2 className={style.name}> {gender}</h2>

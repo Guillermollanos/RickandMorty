@@ -1,0 +1,27 @@
+.container {
+	/* Estilos para el fondo gris y bordes redondeados */
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	padding: 20px;
+	width: 300px; /* Ancho fijo para la tarjeta */
+	margin: 0 auto; /* Centrar horizontalmente */
+	margin-top: 200px; /* Ajustar la distancia desde la parte superior */
+}
+
+.centered {
+	/* Estilos para centrar el formulario verticalmente */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px; /* Ocupa el 100% del alto de la ventana */
+}
+
+.buttonWrapper {
+	/* Estilos para centrar el botón de submit */
+	display: flex;
+	justify-content: center;
+	margin-top: 20px; /* Ajustar la distancia entre los campos y el botón */
+}
+.formWrapper {
+	padding: 5px;
+}

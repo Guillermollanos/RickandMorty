@@ -1,6 +1,5 @@
 import Card from '../Card/Card';
 import style from './Cards.module.css';
-import { Link } from 'react-router-dom';
 
 export default function Cards({ characters, onClose }) {
 	return (

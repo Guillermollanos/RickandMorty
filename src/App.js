@@ -3,12 +3,13 @@ import { Nav } from './components/NavBar/Nav';
 import Cards from './components/Cards/Cards';
 import { useState } from 'react';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/About/About';
 import { Detail } from './components/Detail/Detail';
 import { Error404 } from './components/Error404/Error404';
-
+import { Form } from './components/Form/Form';
 function App() {
+	const { pathname } = useLocation();
 	const [characters, setCharacters] = useState([]);
 
 	function onSearch(id) {
@@ -36,7 +37,8 @@ function App() {
 	};
 	return (
 		<div className='App'>
-			<Nav onSearch={onSearch} />
+			{pathname !== '/' && <Nav onSearch={onSearch} />}
+
 			<Routes>
 				<Route
 					path='/home'
@@ -45,6 +47,7 @@ function App() {
 				<Route path='/about' element={<About />} />
 				<Route path='/detail/:id' element={<Detail />} />
 				<Route path='*' element={<Error404 />} />
+				<Route path='/' element={<Form />} />
 			</Routes>
 		</div>
 	);
