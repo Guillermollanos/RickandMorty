@@ -12,6 +12,8 @@
 	transition: background-color 0.3s ease, transform 0.3s ease;
 	box-shadow: 0 4px 6px rgba(221, 216, 216, 0.1);
 	transform: scale(1);
+	width: 15%;
+	height: 20%;
 }
 
 .container:hover {

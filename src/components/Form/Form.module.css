@@ -1,11 +1,14 @@
+/* Estilos del formulario */
+
 .container {
 	/* Estilos para el fondo gris y bordes redondeados */
-	background-color: #f2f2f2;
+	background-color: #3b3939;
 	border-radius: 10px;
 	padding: 20px;
 	width: 300px; /* Ancho fijo para la tarjeta */
-	margin: 0 auto; /* Centrar horizontalmente */
-	margin-top: 200px; /* Ajustar la distancia desde la parte superior */
+	display: flex; /* Usar flexbox para centrar el formulario */
+	justify-content: center; /* Centrar horizontalmente */
+	align-items: center; /* Centrar verticalmente */
 }
 
 .centered {
@@ -13,7 +16,23 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100px; /* Ocupa el 100% del alto de la ventana */
+	height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+}
+
+input[type='text'] {
+	/* Estilos para los campos de texto */
+	width: 80%; /* Ancho menor para los inputs */
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	transition: box-shadow 0.3s ease; /* Transición suave del efecto de sombra */
+	margin: 0 auto; /* Centrar los inputs */
+}
+
+input[type='text']:focus {
+	/* Estilos para los campos de texto en foco */
+	outline: none;
+	box-shadow: 0 0 5px #1f618d; /* Efecto de sombra azul alrededor del campo */
 }
 
 .buttonWrapper {
@@ -22,6 +41,30 @@
 	justify-content: center;
 	margin-top: 20px; /* Ajustar la distancia entre los campos y el botón */
 }
+
+button {
+	/* Estilos para el botón de submit */
+	padding: 10px 20px;
+	background-color: #e74c3c; /* Color de fondo del botón */
+	color: #ffffff; /* Color de letra del botón */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button:hover {
+	/* Estilos para el botón de submit en hover */
+	background-color: #c0392b; /* Color de fondo más oscuro al pasar el cursor */
+}
+
+p {
+	/* Estilos para los mensajes de error */
+	color: #e74c3c; /* Color rojo para los mensajes de error */
+	font-size: 14px; /* Tamaño más pequeño para los mensajes de error */
+	margin-top: 5px; /* Ajustar la distancia entre el campo y el mensaje */
+}
+
 .formWrapper {
 	padding: 5px;
 }

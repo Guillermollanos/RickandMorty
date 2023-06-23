@@ -2,7 +2,7 @@ import { useState } from 'react';
 import style from './Form.module.css';
 import { validation } from './validation';
 
-export const Form = () => {
+export const Form = ({ login }) => {
 	const [errors, setErrors] = useState({});
 	const [userData, setuserData] = useState({
 		username: '',
@@ -12,48 +12,41 @@ export const Form = () => {
 	const handleChange = (event) => {
 		const property = event.target.name;
 		const value = event.target.value;
-
-		setErrors(
-			validation({ ...userData, [event.target.name]: event.target.value })
-		);
 		setuserData({ ...userData, [property]: value });
+		setErrors(validation(userData));
 	};
 
-	const submitHandle = (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
+		login(userData);
 	};
+
 	return (
-		<div className={`${style.container} ${style.centered}`}>
+		<form onSubmit={handleSubmit}>
 			<div className={style.formWrapper}>
-				<form onSubmit={submitHandle}>
-					<div className={style.formWrapper}>
-						<label htmlFor='userName'>
-							Email:
-							<input
-								type='text'
-								name='username'
-								value={userData.username}
-								onChange={handleChange}
-							/>
-						</label>
-					</div>
-					<div className={style.formWrapper}>
-						<label htmlFor='password'>
-							Password:
-							<input
-								type='text'
-								name='password'
-								value={userData.password}
-								onChange={handleChange}
-							/>
-						</label>
-					</div>
-					<div className={style.buttonWrapper}>
-						<button type='submit'>Submit</button>
-					</div>
-				</form>
+				<label htmlFor='userName'>Email:</label>
+				<input
+					type='text'
+					name='username'
+					value={userData.username}
+					onChange={handleChange}
+				/>
+				<p>{errors.username}</p>
 			</div>
-		</div>
+			<div className={style.formWrapper}>
+				<label htmlFor='password'>Password:</label>
+				<input
+					type='text'
+					name='password'
+					value={userData.password}
+					onChange={handleChange}
+				/>
+				<p>{errors.password}</p>
+			</div>
+			<div className={style.buttonWrapper}>
+				<button type='submit'>Submit</button>
+			</div>
+		</form>
 	);
 };
 

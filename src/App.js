@@ -1,18 +1,39 @@
-import './App.css';
-import { Nav } from './components/NavBar/Nav';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Nav from './components/NavBar/Nav';
+import Form from './components/Form/Form';
 import Cards from './components/Cards/Cards';
-import { useState } from 'react';
-import axios from 'axios';
-import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/About/About';
-import { Detail } from './components/Detail/Detail';
-import { Error404 } from './components/Error404/Error404';
-import { Form } from './components/Form/Form';
-function App() {
+import Detail from './components/Detail/Detail';
+import Error404 from './components/Error404/Error404';
+import axios from 'axios';
+
+const App = () => {
+	const navigate = useNavigate();
+	const [access, setAccess] = useState(false);
+	const EMAIL = 'guille@gmail.com';
+	const PASSWORD = '1804Dani';
+
+	useEffect(() => {
+		!access && navigate('/');
+	}, [access]);
+
+	const login = (userData) => {
+		if (userData.password === PASSWORD && userData.username === EMAIL) {
+			setAccess(true);
+			navigate('/home');
+		}
+	};
+
+	const logout = () => {
+		setAccess(false);
+		navigate('/');
+	};
+
 	const { pathname } = useLocation();
 	const [characters, setCharacters] = useState([]);
 
-	function onSearch(id) {
+	const onSearch = (id) => {
 		if (!id) {
 			alert('Ingresa un ID');
 			return;
@@ -23,21 +44,25 @@ function App() {
 			return;
 		}
 
-		axios(`https://rickandmortyapi.com/api/character/${id}`)
+		axios
+			.get(`https://rickandmortyapi.com/api/character/${id}`)
 			.then(({ data }) => {
 				if (data.name) {
 					setCharacters((oldChars) => [...oldChars, data]);
 				}
 			})
 			.catch((err) => alert(err.response.data.error));
-	}
+	};
 
 	const onClose = (id) => {
-		setCharacters(characters.filter((char) => char.id !== Number(id)));
+		setCharacters((oldChars) =>
+			oldChars.filter((char) => char.id !== Number(id))
+		);
 	};
+
 	return (
 		<div className='App'>
-			{pathname !== '/' && <Nav onSearch={onSearch} />}
+			{pathname !== '/' && <Nav onSearch={onSearch} logout={logout} />}
 
 			<Routes>
 				<Route
@@ -47,9 +72,10 @@ function App() {
 				<Route path='/about' element={<About />} />
 				<Route path='/detail/:id' element={<Detail />} />
 				<Route path='*' element={<Error404 />} />
-				<Route path='/' element={<Form />} />
+				<Route path='/' element={<Form login={login} />} />
 			</Routes>
 		</div>
 	);
-}
+};
+
 export default App;

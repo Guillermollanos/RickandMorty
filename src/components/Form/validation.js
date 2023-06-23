@@ -20,4 +20,6 @@ export const validation = (data) => {
 	if (!passwordRegex.test(data.password))
 		errors.password =
 			'La contraseña debe tener al menos un número y tener una longitud entre 6 y 10 caracteres.';
+
+	return errors;
 };

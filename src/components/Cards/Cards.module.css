@@ -4,6 +4,9 @@
 	justify-content: space-between;
 	gap: 20px;
 	background-color: transparent;
+
+	margin: 0 auto; /* Centrar el contenedor */
+	margin-top: 20px; /* Agregar margen superior */
 }
 
 .image {
