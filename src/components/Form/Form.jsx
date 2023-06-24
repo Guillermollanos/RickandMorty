@@ -22,31 +22,41 @@ export const Form = ({ login }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<div className={style.formWrapper}>
-				<label htmlFor='userName'>Email:</label>
-				<input
-					type='text'
-					name='username'
-					value={userData.username}
-					onChange={handleChange}
-				/>
-				<p>{errors.username}</p>
-			</div>
-			<div className={style.formWrapper}>
-				<label htmlFor='password'>Password:</label>
-				<input
-					type='text'
-					name='password'
-					value={userData.password}
-					onChange={handleChange}
-				/>
-				<p>{errors.password}</p>
-			</div>
-			<div className={style.buttonWrapper}>
-				<button type='submit'>Submit</button>
-			</div>
-		</form>
+		<div className={style.form}>
+			<form onSubmit={handleSubmit}>
+				<div className={style.inputContainer}>
+					<label htmlFor='userName' className={style.LabelForm}>
+						Email:
+					</label>
+					<input
+						type='text'
+						name='username'
+						value={userData.username}
+						onChange={handleChange}
+						className={style.containerInput}
+					/>
+					<p className={style.textError}>{errors.username}</p>
+				</div>
+				<div className={style.inputContainer}>
+					<label htmlFor='password' className={style.LabelForm}>
+						Password:
+					</label>
+					<input
+						type='password'
+						name='password'
+						value={userData.password}
+						onChange={handleChange}
+						className={style.containerInput}
+					/>
+					<p className={style.textError}>{errors.password}</p>
+				</div>
+				<div className={style.buttonContainer}>
+					<button type='submit' className={style.buttonForm}>
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
 	);
 };
 

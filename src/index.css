@@ -1,9 +1,45 @@
+/* index.css */
+
+/* Estilos generales */
 body {
+	font-family: Arial, sans-serif;
 	margin: 0;
-	font-family: 'Roboto', sans-serif;
-	background-color: transparent; /* Color transparente para el fondo */
-	background-image: url('./assets/background.jpg'); /* Nueva imagen de fondo */
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100vh; /* Abarcar el 100% de la pantalla */
+	padding: 0;
+	background-image: url(./assets/Rick-And-Morty\ background.jpg.png);
+}
+
+/* Estilos para la clase "container" */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Estilos para los botones */
+.button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.button:hover {
+	background-color: #45a049;
+}
+
+/* Estilos para los enlaces */
+a {
+	color: #4caf50;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }

@@ -1,0 +1,13 @@
+/* Error404.module.css */
+
+.containerError {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.textError {
+	font-size: 48px;
+	color: red;
+}

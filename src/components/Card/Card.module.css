@@ -1,93 +1,51 @@
+/* Card.module.css */
+
 .container {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 10px;
-	text-align: center;
-	background-color: #97ce4c;
-	color: #1f618d;
-	border-radius: 10px;
-	margin-bottom: 20px;
-	transition: background-color 0.3s ease, transform 0.3s ease;
-	box-shadow: 0 4px 6px rgba(221, 216, 216, 0.1);
-	transform: scale(1);
-	width: 15%;
-	height: 20%;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 16px;
+	margin-bottom: 16px;
 }
 
-.container:hover {
-	background-color: #9ff33e;
-	box-shadow: 0 8px 12px rgba(221, 216, 216, 0.3);
-	transform: scale(0.9); /* Reduce el tamaño de la tarjeta en el estado hover */
+.buttonContainer {
+	position: absolute;
+	top: 8px;
+	right: 8px;
 }
 
 .button {
 	position: absolute;
-	top: 10px;
-	left: 10px;
-	background-color: #e74c3c;
-	color: #ffffff;
-	transition: background-color 0.3s ease;
-}
-
-.button:active {
-	background-color: #c0392b;
+	top: 8px;
+	right: 8px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;
+	color: #f10808;
 }
 
 .name {
-	color: #1e5c2d;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 5px;
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #4caf50;
 }
 
 .nameCard {
-	color: #1f618d;
-	font-size: 14px;
-	font-weight: normal;
-	margin-bottom: 5px;
+	color: #4caf50;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 
 .nameStatus {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	background-color: #1f618d;
-	color: #ffffff;
-	padding: 5px 10px;
-	border-radius: 5px;
-	font-size: 14px;
-	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #4caf50;
 }
 
 .image {
-	max-width: 100%;
-	height: auto;
-	margin-bottom: 10px;
-	transition: transform 0.3s ease;
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
-}
-
-.container:hover .image {
-	transform: translate3d(0, -5px, 0);
+	width: 100%;
+	max-height: 200px;
+	object-fit: cover;
+	border-radius: 4px;
 }

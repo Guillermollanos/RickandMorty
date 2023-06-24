@@ -1,21 +1,17 @@
+/* Cards.module.css */
+
 .container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 20px;
-	background-color: transparent;
-
-	margin: 0 auto; /* Centrar el contenedor */
-	margin-top: 20px; /* Agregar margen superior */
+	justify-content: space-evenly;
+	gap: 16px;
 }
 
-.image {
-	border-radius: 10px;
-	width: 100%;
-	height: auto;
+.container:hover .card {
+	transform: scale(1.05);
 }
 
-.nameCard {
-	font-weight: bold;
-	font-size: 20px;
+.card {
+	/* Estilos previos */
+	transition: transform 0.3s ease-in-out;
 }

@@ -1,8 +1,10 @@
+/* NavLink.module.css */
+
 .isActive {
-	color: aqua;
-	font-weight: 700;
+	color: #4caf50;
+	font-weight: bold;
 }
 
 .inactive {
-	color: #ffffff;
+	color: #000;
 }

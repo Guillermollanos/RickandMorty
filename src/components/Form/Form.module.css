@@ -1,70 +1,49 @@
-/* Estilos del formulario */
+/* Form.module.css */
 
-.container {
-	/* Estilos para el fondo gris y bordes redondeados */
-	background-color: #3b3939;
-	border-radius: 10px;
-	padding: 20px;
-	width: 300px; /* Ancho fijo para la tarjeta */
-	display: flex; /* Usar flexbox para centrar el formulario */
-	justify-content: center; /* Centrar horizontalmente */
-	align-items: center; /* Centrar verticalmente */
-}
-
-.centered {
-	/* Estilos para centrar el formulario verticalmente */
+.form {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+	margin: 200px auto;
+	width: 300px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #dfdbdb;
 }
 
-input[type='text'] {
-	/* Estilos para los campos de texto */
-	width: 80%; /* Ancho menor para los inputs */
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	transition: box-shadow 0.3s ease; /* Transición suave del efecto de sombra */
-	margin: 0 auto; /* Centrar los inputs */
-}
-
-input[type='text']:focus {
-	/* Estilos para los campos de texto en foco */
-	outline: none;
-	box-shadow: 0 0 5px #1f618d; /* Efecto de sombra azul alrededor del campo */
-}
-
-.buttonWrapper {
-	/* Estilos para centrar el botón de submit */
+.inputContainer {
 	display: flex;
-	justify-content: center;
-	margin-top: 20px; /* Ajustar la distancia entre los campos y el botón */
+	flex-direction: column;
+	margin-bottom: 10px;
 }
 
-button {
-	/* Estilos para el botón de submit */
-	padding: 10px 20px;
-	background-color: #e74c3c; /* Color de fondo del botón */
-	color: #ffffff; /* Color de letra del botón */
+.LabelForm {
+	font-size: 16px;
+	margin-bottom: 5px;
+	color: #4caf50;
+}
+
+.containerInput {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.textError {
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+.buttonForm {
+	background-color: #4caf50;
+	color: white;
 	border: none;
-	border-radius: 5px;
+	padding: 10px 20px;
 	cursor: pointer;
-	transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
 
-button:hover {
-	/* Estilos para el botón de submit en hover */
-	background-color: #c0392b; /* Color de fondo más oscuro al pasar el cursor */
-}
-
-p {
-	/* Estilos para los mensajes de error */
-	color: #e74c3c; /* Color rojo para los mensajes de error */
-	font-size: 14px; /* Tamaño más pequeño para los mensajes de error */
-	margin-top: 5px; /* Ajustar la distancia entre el campo y el mensaje */
-}
-
-.formWrapper {
-	padding: 5px;
+.buttonForm:hover {
+	background-color: #45a049;
 }

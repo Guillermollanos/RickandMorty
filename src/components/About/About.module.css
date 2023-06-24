@@ -1,21 +1,19 @@
+/* About.module.css */
+
 .aboutContainer {
-	text-align: center;
-
+	max-width: 600px;
+	margin: 0 auto;
 	padding: 20px;
-
-	position: relative; /* Establecer la posición del contenedor como relativa */
 }
 
-h1 {
-	font-size: 2rem;
-	margin-bottom: 20px;
-}
-
-p {
-	font-size: 1rem; /* Modificar el tamaño de la fuente de los párrafos */
+.titleAbout {
+	font-size: 24px;
 	margin-bottom: 10px;
+	color: #4caf50;
 }
 
-p:last-child {
-	margin-top: 20px; /* Agregar margen superior al último párrafo */
+.textAbout {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #4caf50;
 }

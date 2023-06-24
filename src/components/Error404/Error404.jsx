@@ -1,9 +1,9 @@
-import React from 'react';
+import style from './Error.module.css';
 
 export const Error404 = () => {
 	return (
-		<div>
-			<h1>Error 404</h1>
+		<div className={style.containerError}>
+			<h1 className={style.textError}>Error 404</h1>
 		</div>
 	);
 };

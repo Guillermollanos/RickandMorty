@@ -1,48 +1,40 @@
-/* Estilos del navbar */
+/* Nav.module.css */
 
 .container {
-	/* Estilos para el contenedor del navbar */
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	height: 50px; /* Ajustar la altura del contenedor según tus necesidades */
-	background-color: #97ce4c; /* Color de fondo verde claro que combina con el logo */
-}
-
-input[type='search'] {
-	/* Estilos para el campo de búsqueda */
-	width: 60%;
+	background-color: #f1f1f1;
 	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.textNav {
+	color: #000;
+	font-size: 16px;
+	margin-right: 10px;
+}
+
+.buttonHome {
+	background-color: #4caf50;
+	color: white;
 	border: none;
-	border-radius: 20px;
-	transition: box-shadow 0.3s ease; /* Transición suave del efecto de sombra */
-}
-
-input[type='search']:focus {
-	/* Estilos para el campo de búsqueda en foco */
-	outline: none;
-	box-shadow: 0 0 5px #1f618d; /* Efecto de sombra azul alrededor del campo */
-}
-
-.button {
-	/* Estilos para los botones del navbar */
 	padding: 10px 20px;
-	background-color: #e74c3c; /* Color de fondo rojo intenso que contrasta con el verde */
-	color: #ffffff; /* Color blanco para la letra de los botones */
-	border: none;
-	border-radius: 5px;
 	cursor: pointer;
-	transition: background-color 0.3s ease,
-		/* Transición suave del color de fondo y la transformación al pasar el cursor*/
-			transform 0.3s ease-in-out,
-		box-shadow 0.3s ease-in-out, color 0.3s ease-in-out,
-		font-weight 0.3s ease-in-out, font-size 0.3s ease-in-out,
-		text-decoration 0.3s ease-in-out, text-transform 0.3s ease-in-out,
-		text-align 0.3s ease-in-out, text-shadow 0.3s ease-in-out,
-		line-height 0.3s ease-in-out, padding-left 0.3s ease-in-out,
-		padding-right 0.3s ease-in-out;
 }
-.button:hover {
-	background-color: #15427d; /* Color azul oscuro que combina con el efecto de sombra al pasar el cursor*/
+
+.buttonHome:hover {
+	background-color: #45a049;
+}
+
+.buttonSearch {
+	background-color: #f44336;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.buttonSearch:hover {
+	background-color: #d32f2f;
 }
