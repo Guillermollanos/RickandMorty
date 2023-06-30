@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Error404 from './components/Error404/Error404';
 import axios from 'axios';
+import Favorites from './components/Favorites/Favorites';
 
 const App = () => {
 	const navigate = useNavigate();
@@ -16,7 +17,7 @@ const App = () => {
 
 	useEffect(() => {
 		!access && navigate('/');
-	}, [access]);
+	}, [access, navigate]);
 
 	const login = (userData) => {
 		if (userData.password === PASSWORD && userData.username === EMAIL) {
@@ -72,6 +73,7 @@ const App = () => {
 				<Route path='/about' element={<About />} />
 				<Route path='/detail/:id' element={<Detail />} />
 				<Route path='*' element={<Error404 />} />
+				<Route path='/Favorites' element={<Favorites />} />
 				<Route path='/' element={<Form login={login} />} />
 			</Routes>
 		</div>
