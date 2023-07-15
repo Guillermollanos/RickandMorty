@@ -8,7 +8,7 @@ export const Detail = () => {
 	const [characterDetail, setCharacterDetail] = useState({});
 
 	useEffect(() => {
-		axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+		axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
 			({ data }) => {
 				if (data.name) {
 					setCharacterDetail(data);
