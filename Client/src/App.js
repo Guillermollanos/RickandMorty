@@ -12,19 +12,33 @@ import Favorites from './components/Favorites/Favorites';
 const App = () => {
 	const navigate = useNavigate();
 	const [access, setAccess] = useState(false);
-	const EMAIL = 'guille@gmail.com';
-	const PASSWORD = '1804Dani';
+
+	const URL = 'http://localhost:3001/rickandmorty/';
+
+	async function login({ email, password }) {
+		console.log('Email recibido:', email);
+		console.log('Password recibido:', password);
+		debugger;
+		try {
+			const { data } = await axios(
+				`${URL}login?email=${email}&password=${password}`
+			);
+
+			const { access } = data;
+
+			setAccess(access);
+
+			access && navigate('/home');
+		} catch ({ response }) {
+			const { data } = response;
+			console.log(data);
+			alert(data.message);
+		}
+	}
 
 	useEffect(() => {
 		!access && navigate('/');
 	}, [access, navigate]);
-
-	const login = (userData) => {
-		if (userData.password === PASSWORD && userData.username === EMAIL) {
-			setAccess(true);
-			navigate('/home');
-		}
-	};
 
 	const logout = () => {
 		setAccess(false);
@@ -34,7 +48,7 @@ const App = () => {
 	const { pathname } = useLocation();
 	const [characters, setCharacters] = useState([]);
 
-	const onSearch = (id) => {
+	const onSearch = async (id) => {
 		if (!id) {
 			alert('Ingresa un ID');
 			return;
@@ -45,21 +59,22 @@ const App = () => {
 			return;
 		}
 
-		axios
-			.get(`http://localhost:3001/rickandmorty/character/${id}`)
-			.then(({ data }) => {
-				if (data.name) {
-					setCharacters((oldChars) => [...oldChars, data]);
-				}
-			})
-			.catch((err) => alert(err.response.data.error));
+		try {
+			const { data } = await axios(`${URL}character/${id}`);
+
+			setCharacters((oldchars) => [...oldchars, data]);
+		} catch (error) {
+			//console.log(error.response); // ¡Aquí está el log!
+
+			//console.log(error.response.status); // status del error
+			//console.log(error.response.data);
+			alert(error.response.data);
+		}
 	};
 
-	const onClose = (id) => {
-		setCharacters((oldChars) =>
-			oldChars.filter((char) => char.id !== Number(id))
-		);
-	};
+	function onClose(id) {
+		setCharacters(characters.filter((char) => char.id !== id));
+	}
 
 	return (
 		<div className='App'>

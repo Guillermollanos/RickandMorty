@@ -1,26 +1,45 @@
-import { ADD_FAV, REMOVE_FAV } from './action/action_types';
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from './action/action_types';
 
 const initialState = {
 	myFavorites: [],
+	allCharacters: [],
 };
 
-const reducer = (state = initialState, action) => {
+function reducer(state = initialState, action) {
 	switch (action.type) {
 		case ADD_FAV:
 			return {
 				...state,
-				myFavorites: [...state.myFavorites, action.payload],
+				myFavorites: action.payload,
+				allCharacters: action.payload,
 			};
 		case REMOVE_FAV:
 			return {
 				...state,
-				myFavorites: state.myFavorites.filter(
-					(personaje) => personaje.id !== action.payload
-				),
+				myFavorites: action.payload,
+			};
+		case FILTER:
+			const filtered = state.allCharacters.filter(
+				(char) => char.gender === action.payload
+			);
+			console.log(filtered);
+			return {
+				...state,
+				myFavorites: action.payload === 'All' ? state.allCharacters : filtered,
+			};
+		case ORDER:
+			const orderChar = state.allCharacters.sort((a, b) => {
+				if (action.payload === 'ascendente') return a.id - b.id;
+				return b.id - a.id;
+			});
+			console.log(orderChar);
+			return {
+				...state,
+				myFavorites: [...orderChar],
 			};
 		default:
 			return { ...state };
 	}
-};
+}
 
 export default reducer;

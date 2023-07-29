@@ -5,7 +5,7 @@ import { validation } from './validation';
 export const Form = ({ login }) => {
 	const [errors, setErrors] = useState({});
 	const [userData, setuserData] = useState({
-		username: '',
+		email: '',
 		password: '',
 	});
 
@@ -30,12 +30,12 @@ export const Form = ({ login }) => {
 					</label>
 					<input
 						type='text'
-						name='username'
-						value={userData.username}
+						name='email'
+						value={userData.email}
 						onChange={handleChange}
 						className={style.containerInput}
 					/>
-					<p className={style.textError}>{errors.username}</p>
+					<p className={style.textError}>{errors.email}</p>
 				</div>
 				<div className={style.inputContainer}>
 					<label htmlFor='password' className={style.LabelForm}>
